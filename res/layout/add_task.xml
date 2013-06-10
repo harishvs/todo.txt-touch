@@ -1,32 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent" android:layout_height="fill_parent">
+<!--
+This file is part of Todo.txt Touch, an Android app for managing your todo.txt file (http://todotxt.com).
 
-	<LinearLayout android:id="@+id/buttons"
-		android:orientation="horizontal" android:layout_alignParentBottom="true"
-		android:layout_width="fill_parent" android:layout_height="wrap_content">
+Copyright (c) 2009-2013 Todo.txt contributors (http://todotxt.com)
 
-		<Button android:id="@+id/addTask" android:layout_weight="1"
-			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:text="@string/add" />
+LICENSE:
 
-		<Button android:id="@+id/cancel" android:layout_weight="1"
-			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:text="@string/cancel" />
+Todo.txt Touch is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
+License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any
+later version.
 
-	</LinearLayout>
+Todo.txt Touch is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+details.
 
-	<Spinner android:id="@+id/contexts" android:layout_above="@id/buttons"
-		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+You should have received a copy of the GNU General Public License along with Todo.txt Touch.  If not, see
+<http://www.gnu.org/licenses/>.
 
-	<Spinner android:id="@+id/projects" android:layout_above="@id/contexts"
-		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+@author Todo.txt contributors <todotxt@yahoogroups.com>
+@license http://www.gnu.org/licenses/gpl.html
+@copyright 2009-2012 Todo.txt contributors (http://todotxt.com)
+-->
 
-	<Spinner android:id="@+id/priorities" android:layout_above="@id/projects"
-		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+<!--suppress ALL -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                 android:id="@+id/home_root"
+                                 android:layout_width="fill_parent"
+                                 android:layout_height="fill_parent"
+                                 android:showDividers="middle"
+                                 android:orientation="vertical">
 
-	<EditText android:id="@+id/taskText"
-		android:layout_alignParentTop="true" android:layout_above="@id/priorities"
-		android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <EditText
+            android:id="@+id/taskText"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint="@string/tasktexthint"
+            android:gravity="top"
+            android:inputType="textCapSentences|textMultiLine"/>
 
-</RelativeLayout>
+</LinearLayout>

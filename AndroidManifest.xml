@@ -20,39 +20,20 @@ You should have received a copy of the GNU General Public License along with Tod
 @author Todo.txt contributors <todotxt@yahoogroups.com>
 @license http://www.gnu.org/licenses/gpl.html
 @copyright 2009-2013 Todo.txt contributors (http://todotxt.com)
--->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.todotxt.todotxttouch"
-    android:versionCode="36"
-    android:versionName="1.3" >
+--><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="42" android:versionName="1.0-SNAPSHOT" package="com.todotxt.todotxttouch">
 
-    <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="17" />
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="17"/>
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
-    <supports-screens
-        android:anyDensity="true"
-        android:largeScreens="true"
-        android:normalScreens="true"
-        android:resizeable="true"
-        android:smallScreens="true" />
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true"/>
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">
     </uses-permission>
 
-    <application
-        android:name=".TodoApplication"
-        android:allowBackup="true"
-        android:icon="@drawable/todotxt_touch_icon"
-        android:label="@string/app_label"
-        android:theme="@style/Theme.TodoTxt" >
-        <activity
-            android:name="com.dropbox.client2.android.AuthActivity"
-            android:configChanges="orientation|keyboard"
-            android:launchMode="singleTask" >
+    <application android:allowBackup="true" android:icon="@drawable/todotxt_touch_icon" android:label="@string/app_label" android:name=".TodoApplication" android:theme="@style/Theme.TodoTxt">
+        <activity android:configChanges="orientation|keyboard" android:launchMode="singleTask" android:name="com.dropbox.client2.android.AuthActivity">
             <intent-filter>
 
                 <!--
@@ -65,121 +46,80 @@ You should have received a copy of the GNU General Public License along with Tod
 key: gdb3yesuszz3bk8
 secret: 6np5yqalilylpc0
  -->
-				 <data android:scheme="gdb3yesuszz3bk8" />
+				 <data android:scheme="gdb3yesuszz3bk8"/>
 
 
-                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.VIEW"/>
 
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LoginScreen"
-            android:configChanges="keyboardHidden|orientation"
-            android:label="@string/app_label"
-            android:theme="@android:style/Theme.NoTitleBar" >
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_label" android:name=".LoginScreen" android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".FilterActivity"
-            android:label="Filter"
-            android:theme="@android:style/Theme.NoTitleBar" />
-        <activity
-            android:name=".Preferences"
-            android:label="@string/set_preferences" />
-        <activity
-            android:name=".AddTask"
-            android:configChanges="orientation|keyboardHidden"
-            android:label="@string/addtask"
-            android:uiOptions="splitActionBarWhenNarrow"
-            android:windowSoftInputMode="adjustResize" >
+        <activity android:label="Filter" android:name=".FilterActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:label="@string/set_preferences" android:name=".Preferences"/>
+        <activity android:configChanges="orientation|keyboardHidden" android:label="@string/addtask" android:name=".AddTask" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="adjustResize">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
 
-        <activity-alias
-            android:name=".AddTaskShortcut"
-            android:label="@string/shortcut_addtask_name"
-            android:targetActivity=".AddTask" >
+        <activity-alias android:label="@string/shortcut_addtask_name" android:name=".AddTaskShortcut" android:targetActivity=".AddTask">
             <intent-filter>
-                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity-alias>
-        <activity-alias
-            android:name=".AddTaskShare"
-            android:label="@string/share_addtask_name"
-            android:targetActivity=".AddTask" >
+        <activity-alias android:label="@string/share_addtask_name" android:name=".AddTaskShare" android:targetActivity=".AddTask">
             <intent-filter>
-                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SEND"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
 
-                <data android:mimeType="text/plain" />
+                <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity-alias>
 
-        <activity
-            android:name=".HelpActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
-        <activity
-            android:name=".TodoTxtTouch"
-            android:configChanges="keyboardHidden|orientation"
-            android:uiOptions="splitActionBarWhenNarrow" >
+        <activity android:name=".HelpActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".TodoTxtTouch" android:uiOptions="splitActionBarWhenNarrow">
             <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
+                <action android:name="android.intent.action.SEARCH"/>
             </intent-filter>
 
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
         </activity>
 
         <!-- Task list widget -->
-        <receiver
-            android:name=".TodoWidgetProvider"
-            android:enabled="@bool/below_api_14"
-            android:label="@string/app_label" >
+        <receiver android:enabled="@bool/below_api_14" android:label="@string/app_label" android:name=".TodoWidgetProvider">
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="com.todotxt.todotxttouch.APPWIDGET_UPDATE" />
+                <action android:name="com.todotxt.todotxttouch.APPWIDGET_UPDATE"/>
             </intent-filter>
 
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/todo_widget_provider" />
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/todo_widget_provider"/>
         </receiver>
-        <receiver
-            android:name="com.todotxt.todotxttouch.widget.ListWidgetProvider"
-            android:enabled="@bool/api_14_or_above"
-            android:label="@string/app_label" >
+        <receiver android:enabled="@bool/api_14_or_above" android:label="@string/app_label" android:name="com.todotxt.todotxttouch.widget.ListWidgetProvider">
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="com.todotxt.todotxttouch.APPWIDGET_UPDATE" />
+                <action android:name="com.todotxt.todotxttouch.APPWIDGET_UPDATE"/>
             </intent-filter>
             <!-- This specifies the widget provider info -->
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/listwidgetinfo" />
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/listwidgetinfo"/>
         </receiver>
 
         <!-- The service serving the RemoteViews to the collection widget -->
-        <service
-            android:name="com.todotxt.todotxttouch.widget.ListWidgetService"
-            android:enabled="@bool/api_14_or_above"
-            android:exported="false"
-            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <service android:enabled="@bool/api_14_or_above" android:exported="false" android:name="com.todotxt.todotxttouch.widget.ListWidgetService" android:permission="android.permission.BIND_REMOTEVIEWS"/>
     </application>
 
 </manifest>
